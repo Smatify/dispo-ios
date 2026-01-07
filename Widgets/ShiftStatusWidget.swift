@@ -12,6 +12,14 @@ struct ShiftStatusAttributes: ActivityAttributes {
     var name: String
 }
 
+@available(iOS 16.1, *)
+struct ShiftStatusWidgetBundle: WidgetBundle {
+    var body: some Widget {
+        ShiftStatusWidget()
+    }
+}
+
+@available(iOS 16.1, *)
 struct ShiftStatusWidget: Widget {
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: ShiftStatusAttributes.self) { context in

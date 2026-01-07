@@ -3,20 +3,22 @@ import Foundation
 /// Configuration for API endpoints
 /// Update these values to point to your backend API
 struct APIConfiguration {
-    /// Base URL for the API (e.g., "https://api.yourdomain.com")
-    static let baseURL = "https://webhook.site/9fad595f-8b1b-4d67-abf7-bfb485bd2946"
+    static let baseURL = "https://dispo.dev.smatify.dev/api/v1"
     
     /// Endpoint path for location updates
-    static let locationUpdateEndpoint = "/location/update"
+    static let locationUpdateEndpoint = "/locations/update"
     
     /// Endpoint path for shift start
-    static let shiftStartEndpoint = "/shift/start"
+    static let shiftStartEndpoint = "/shifts/start"
     
     /// Endpoint path for shift stop
-    static let shiftStopEndpoint = "/shift/stop"
+    static let shiftStopEndpoint = "/shifts/stop"
     
     /// Endpoint path for device token registration
-    static let deviceTokenEndpoint = "/device/register"
+    static let deviceTokenEndpoint = "/devices/register"
+    
+    /// Endpoint for map driver locations
+    static let projectLocationsEndpoint = "/projects/1/locations"
     
     /// Optional: Set this if your API requires authentication
     /// You can retrieve this from AuthenticationManager after login

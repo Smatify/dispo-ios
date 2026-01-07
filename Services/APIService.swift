@@ -6,12 +6,20 @@ struct LocationUpdate: Codable {
     let longitude: Double
     let speed: Double
     let timestamp: String
+    let batteryPercentage: Int?
+    let isLocationPermissionGranted: Bool
+    let isLowPowerModeEnabled: Bool
+    let isBatteryCharging: Bool
     
-    init(latitude: Double, longitude: Double, speed: Double) {
+    init(latitude: Double, longitude: Double, speed: Double, batteryPercentage: Int?, isLocationPermissionGranted: Bool, isLowPowerModeEnabled: Bool, isBatteryCharging: Bool) {
         self.latitude = latitude
         self.longitude = longitude
         self.speed = speed
         self.timestamp = ISO8601DateFormatter().string(from: Date())
+        self.batteryPercentage = batteryPercentage
+        self.isLocationPermissionGranted = isLocationPermissionGranted
+        self.isLowPowerModeEnabled = isLowPowerModeEnabled
+        self.isBatteryCharging = isBatteryCharging
     }
 }
 
@@ -25,11 +33,15 @@ class APIService {
         self.endpoint = endpoint
     }
     
-    func sendLocationUpdate(latitude: Double, longitude: Double, speed: Double, authToken: String) async throws {
+    func sendLocationUpdate(latitude: Double, longitude: Double, speed: Double, batteryPercentage: Int?, isLocationPermissionGranted: Bool, isLowPowerModeEnabled: Bool, isBatteryCharging: Bool, authToken: String) async throws {
         let locationData = LocationUpdate(
             latitude: latitude,
             longitude: longitude,
-            speed: speed
+            speed: speed,
+            batteryPercentage: batteryPercentage,
+            isLocationPermissionGranted: isLocationPermissionGranted,
+            isLowPowerModeEnabled: isLowPowerModeEnabled,
+            isBatteryCharging: isBatteryCharging
         )
         
         // Create the full URL

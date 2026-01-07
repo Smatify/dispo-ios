@@ -115,11 +115,11 @@ struct PermissionsIntroductionView: View {
             .padding(.horizontal, 24)
             .padding(.bottom, 40)
         }
-        .onChange(of: currentStep) { _ in
+        .onChange(of: currentStep) { _, _ in
             // Auto-advance if permission is already granted
             checkAndAdvanceIfNeeded()
         }
-        .onChange(of: permissionManager.locationPermissionStatus) { _ in
+        .onChange(of: permissionManager.locationPermissionStatus) { _, _ in
             // Auto-advance when location permission status changes
             checkAndAdvanceIfNeeded()
         }

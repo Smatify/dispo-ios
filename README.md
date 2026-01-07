@@ -31,7 +31,7 @@ A proof-of-concept iOS app for ride service dispatching with location tracking a
 - Sends location data to API based on:
   - **Distance threshold**: 50 meters minimum
   - **Time threshold**: 30 seconds minimum
-- Transmits: latitude, longitude, and speed
+- Transmits: latitude, longitude, speed, and battery percentage
 - Works in background
 
 ### 5. Live Activity
@@ -126,7 +126,11 @@ The app sends real JSON data to your API endpoint. To configure:
      "latitude": 37.7749,
      "longitude": -122.4194,
      "speed": 5.2,
-     "timestamp": "2024-01-01T12:00:00Z"
+     "timestamp": "2024-01-01T12:00:00Z",
+     "batteryPercentage": 82,
+     "isLocationPermissionGranted": true,
+     "isLowPowerModeEnabled": false,
+     "isBatteryCharging": true
    }
    ```
    - `latitude`: Double (decimal degrees)
